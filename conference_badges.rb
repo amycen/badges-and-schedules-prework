@@ -5,16 +5,19 @@ def badge_maker(name)
 end
 
 def batch_badge_creator(name_array)
-  name_array.each! do |name|
-    badge_maker(name)
+  badges = []
+  name_array.each do |name|
+    badges.push(badge_maker(name))
   end
+  badges
 end
 
 def assign_rooms(name_array)
-  i = 1
+  rooms = []
   name_array.each_with_index! do |name, index|
-    "Hello, #{name}! You'll be assigned to room #{index + 1}!"
+    rooms.push("Hello, #{name}! You'll be assigned to room #{index + 1}!")
   end
+  rooms
 end
 
 def printer(name_array)
